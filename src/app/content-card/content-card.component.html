@@ -1,0 +1,33 @@
+<div
+  ngClass="{{ player?.id === 1 ? 'content-card first' : 'content-card' }}"
+  (click)="onPress()"
+  appHoverAffect
+>
+  <div class="content-img">
+    <img
+      *ngIf="player?.imgURL"
+      src="{{ player?.imgURL }}"
+      alt="{{ player?.title }}"
+    />
+    <img
+      *ngIf="!player?.imgURL"
+      src="https://via.placeholder.com/150"
+      alt="{{ player?.title }}"
+    />
+  </div>
+  <p>{{ player?.type }}</p>
+  <div ngClass="{{ player?.type }} content">
+    <div class="content-card-header">
+      <h3>{{ player?.title }}</h3>
+      <h4>{{ player?.description}}</h4>
+      <ul class="content-tags">
+        <li class="content-tag" *ngFor="let tag of player?.tags">
+          {{ tag }}
+        </li>
+      </ul>
+    </div>
+    <p class="content-description">
+      {{ player?.description }}
+    </p>
+  </div>
+</div>

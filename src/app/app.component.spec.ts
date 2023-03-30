@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Java7'`, () => {
+  it(`should have as title 'favorite-player'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Java7');
+    expect(app.title).toEqual('favorite-player');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Java7 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('favorite-player app is running!');
   });
 });

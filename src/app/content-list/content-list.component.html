@@ -1,0 +1,31 @@
+
+<section class="section">
+    <h2>My Favorite player</h2>
+  
+    <app-create-content
+      (contentAdded)="onContentAdded($event)"
+    ></app-create-content>
+    <app-modify-content-component
+      [currentContent]=""
+      [player]="player"
+    ></app-modify-content-component>
+  
+    <div>
+      <label for="search">Search</label>
+      <input
+        type="text"
+        id="search"
+        placeholder="Search"
+        (input)="handleInput($event)"
+      />
+      <button (click)="searchContent()">Search</button>
+    </div>
+    <p *ngIf="isAvailable">Available</p>
+    <p *ngIf="!isAvailable">Not Available</p>
+    <app-content-card class="featured" [player]="player"></app-content-card>
+    <ul class="content-list">
+      <li *ngFor="let player of player">
+        <app-content-card [movie]="player"></app-content-card>
+      </li>
+    </ul>
+  </section>

@@ -1,0 +1,43 @@
+<div>
+    <label for="contentId">Select Player to Edit</label>
+    <select name="contentId" [(ngModel)]="updatedContent.id">
+      <option
+        *ngFor="let player of player"
+        [value]="player.id"
+        onclick="setCurrentMovie(movie.id)"
+      >
+        {{ player.title }}
+      </option>
+    </select>
+  
+    <label for="contentTitle">Title:</label>
+    <input
+      type="text"
+      name="contentTitle"
+      [(ngModel)]="updatedContent.title"
+      [value]="currentContent?.title ?? ''"
+    />
+  
+    <label for="contentDescription">Description:</label>
+    <textarea
+      name="contentDescription"
+      [(ngModel)]="updatedContent.description"
+    ></textarea>
+  
+    <label for="contentImgURL">Image URL:</label>
+    <input type="text" name="contentImgURL" [(ngModel)]="updatedContent.imgURL" />
+  
+    <label for="contentType">Type:</label>
+    <input type="text" name="contentType" [(ngModel)]="updatedContent.type" />
+  
+  
+  
+    <label for="contentDirector">player:</label>
+    <input
+      type="text"
+      name="contentDirector"
+      [(ngModel)]="updatedContent.player"
+    />
+  
+    <button (click)="addContent()">Add Content</button>
+  </div>
